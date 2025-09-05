@@ -1,0 +1,717 @@
+/* --- VARIABLES & GLOBAL STYLES --- */
+:root {
+    --primary-color: #0046d3; /* A sophisticated teal/green */
+    --primary-hover: #00877E;
+    --text-dark: #2d3748; /* Softer than pure black */
+    --text-light: #718096;
+    --background-light: #FAFAFA;
+    --background-white: #FFFFFF;
+    --border-color: #E2E8F0;
+    --font-family: 'Poppins', sans-serif;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.7;
+    color: var(--text-dark);
+    background-color: var(--background-white);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.left-aligned {
+    text-align: left;
+}
+
+/* --- HEADER --- */
+.main-header {
+    padding: 12px 0;
+    background-color: var(--background-white);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo img {
+    max-width: 100px; /* Define a largura máxima da sua logo */
+    height: auto;     /* Mantém a proporção correta da imagem */
+    display: block;   /* Remove qualquer espaço extra abaixo da imagem */
+}
+
+/* --- HEADER & NAVIGATION --- */
+.main-header {
+    background-color: #fff;
+    padding: 15px 0;
+    position: sticky; /* Faz o header ficar fixo no topo */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 40px; /* Ajuste a altura da sua logo */
+}
+
+.main-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Espaçamento entre os links */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-dark, #333); /* Use sua variável de cor ou um padrão */
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color, #007bff); /* Use sua variável de cor primária */
+}
+
+/* Oculta o botão de menu em telas grandes */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* --- ESTILOS PARA O MENU MOBILE (RESPONSIVO) --- */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none; /* Esconde a navegação por padrão */
+        position: absolute;
+        top: 100%; /* Começa logo abaixo do header */
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Mostra o menu quando o header tiver a classe .nav-open */
+    .main-header.nav-open .main-nav {
+        display: block;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .main-nav li a {
+        display: block;
+        padding: 15px 20px;
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* Mostra o botão de menu (hambúrguer) em telas pequenas */
+    .nav-toggle {
+        display: block;
+    }
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    padding: 80px 0;
+}
+
+.hero-container {
+    display: grid;
+    /* Por padrão (mobile), terá uma coluna */
+    grid-template-columns: 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Adicione esta Media Query para telas maiores (desktop) */
+@media (min-width: 768px) {
+    .hero-container {
+        /* Em telas maiores, muda para duas colunas de tamanho igual */
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    max-width: 50ch; /* Improves readability */
+}
+
+.hero-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.hero-benefits span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.hero-benefits .fa-check {
+    color: var(--primary-color);
+}
+
+.video-wrapper {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.video-wrapper video {
+    width: 100%;
+    display: block;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--background-white);
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+}
+
+/* --- TESTIMONIALS SECTION --- */
+.testimonials {
+    padding: 80px 0;
+    background-color: var(--background-light);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: var(--background-white);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-quote {
+    font-size: 1rem;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* --- ESTILOS PARA A NOVA SEÇÃO DE OFERTA --- */
+/* --- SEÇÃO DE OFERTA - VERSÃO COMPLETA E CORRIGIDA --- */
+
+/* 1. O Layout Principal (Grid Responsivo) */
+.offer-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Uma coluna no mobile por padrão */
+    gap: 40px;
+    align-items: center;
+}
+
+/* Em telas maiores, o layout muda para duas colunas */
+@media (min-width: 768px) {
+    .offer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: flex-start; /* Alinha pelo topo, fica mais elegante */
+    }
+}
+
+/* 2. O Contêiner do Slider */
+
+/* 3. O Slide Individual (Dentro do Slider) */
+.product-swiper .swiper-slide {
+    /* Remove o fundo de degradê que a biblioteca do Swiper adiciona por padrão */
+    background: transparent;
+}
+
+/* 4. A Imagem (Dentro do Slide) */
+.product-swiper .swiper-slide img {
+    /* Faz a imagem preencher 100% do espaço do slide que agora tem um tamanho definido */
+    display: block;
+    width: 100%;
+    height: 100%;
+    
+    /* Garante que a imagem cubra o espaço sem distorcer (corta o excesso se necessário) */
+    object-fit: cover;
+}
+
+/* 5. Estilos para os Controles do Slider */
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--primary-color, #0046d3);
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--primary-color, #0046d3);
+}
+
+
+/* 6. Estilos para o Conteúdo de Texto (Estrelas, Benefícios, etc.) */
+/* (Estes são os estilos que você já tinha, que estavam corretos) */
+.star-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+    color: #fdd835;
+}
+
+.star-rating span {
+    color: var(--text-light, #555);
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+.offer-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.offer-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.offer-benefits .fa-check {
+    color: var(--primary-color, #007bff);
+}
+
+/* --- ESTILO DE DESTAQUE PARA A GARANTIA (CARD) --- */
+
+.guarantee-box {
+    display: flex; /* Alinha o ícone e o texto lado a lado */
+    align-items: center; /* Centraliza verticalmente o ícone com o texto */
+    gap: 15px; /* Espaço entre o ícone e o texto */
+    
+    background-color: #f8f9fa; /* Um fundo cinza muito claro para criar o card */
+    border: 1px solid #e9ecef; /* Uma borda sutil para definir as arestas */
+    border-radius: 8px; /* Cantos arredondados para um visual moderno */
+    padding: 20px; /* Espaçamento interno generoso */
+    margin-top: 30px; /* Espaço acima para separar do botão de compra */
+    
+    /* Opcional: uma sombra suave para dar profundidade e destacar ainda mais */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+}
+
+/* Estilo para o ícone de escudo dentro do card */
+.guarantee-box .fa-shield-alt {
+    font-size: 2.2rem; /* Aumenta o tamanho do ícone para ter mais presença */
+    color: var(--primary-color, #007bff); /* Usa a cor principal para o ícone, criando um ponto de confiança */
+}
+
+/* Ajustes no parágrafo dentro do card */
+.guarantee-box p {
+    margin: 0; /* Remove a margem padrão do parágrafo que pode causar espaçamento indesejado */
+    font-size: 0.9rem; /* Tamanho de fonte ideal para texto de apoio */
+    line-height: 1.5; /* Melhora a legibilidade */
+}
+/* --- ESTILO DE DESTAQUE PARA O PREÇO --- */
+
+.price-box {
+    display: flex;
+    align-items: baseline; /* Alinha os preços pela base, fica ótimo com fontes de tamanhos diferentes */
+    gap: 15px;
+    margin: 20px 0; /* Adiciona um espaço vertical para respirar */
+}
+
+.price-new {
+    font-size: 2.8rem; /* BEM GRANDE para chamar atenção */
+    font-weight: 700; /* Negrito */
+    color: var(--primary-color, #007bff); /* Usa a cor primária do seu site para criar consistência */
+    line-height: 1;
+}
+
+.price-old {
+    font-size: 1.5rem; /* Menor que o preço novo */
+    color: var(--text-light, #888); /* Cor cinza, para indicar que não é o preço principal */
+    text-decoration: line-through; /* RISCADO para mostrar que é o preço antigo */
+}
+/* --- AJUSTES PARA A SEÇÃO DE OFERTA NO MOBILE --- */
+@media (max-width: 767px) {
+
+    .offer-content {
+        text-align: center; /* Centraliza todo o conteúdo de texto */
+    }
+
+    /* O título da seção já é centralizado, mas garantimos que o alinhamento esquerdo seja removido */
+    .offer-content .section-title.left-aligned {
+        text-align: center;
+    }
+
+    /* Centraliza os itens dentro de caixas flex (preço, estrelas e garantia) */
+    .price-box,
+    .star-rating,
+    .guarantee-box {
+        justify-content: center;
+    }
+
+    /* Ajusta o tamanho do preço para não ser tão exagerado no mobile */
+    .price-new {
+        font-size: 2.5rem; /* Um pouco menor que no desktop, mas ainda com impacto */
+    }
+    .price-old {
+        font-size: 1.3rem; /* Reduz o preço antigo proporcionalmente */
+    }
+
+    /* 
+      A MUDANÇA MAIS IMPORTANTE:
+      Ocultamos os bullet points da oferta e o texto ao lado das estrelas.
+      Isso limpa MUITO o layout, focando no que importa: Prova Social (estrelas), Preço e CTA.
+    */
+    .offer-benefits,
+    .star-rating span {
+        display: none;
+    }
+
+    /* Garante que o botão de CTA ocupe uma largura maior para facilitar o clique */
+    .cta-button {
+        width: 100%; /* Faz o botão ocupar a largura total */
+        max-width: 350px; /* Mas limita para não ficar estranho em telas um pouco maiores */
+        margin: 0 auto; /* Centraliza o botão */
+    }
+}
+/* --- FAQ SECTION --- */
+.faq {
+    padding: 80px 0;
+    background-color: var(--background-light);
+}
+
+.faq-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.faq-item details {
+    padding: 20px 0;
+}
+
+.faq-item summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    list-style: none; /* Remove default marker */
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary .fa-chevron-down {
+    transition: transform 0.3s ease;
+}
+
+.faq-item details[open] summary .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.faq-item p {
+    margin-top: 15px;
+    color: var(--text-light);
+    padding-right: 20px;
+}
+
+/* --- FOOTER --- */
+.main-footer {
+    padding: 40px 0;
+    background-color: var(--background-white);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-brand p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 5px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* --- PROBLEM SECTION --- */
+.problem {
+    padding: 80px 0;
+    background-color: var(--background-white);
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.problem-card {
+    text-align: center;
+}
+
+.problem-card i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.problem-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+/* --- HOW IT WORKS SECTION --- */
+.how-it-works {
+    padding: 80px 0;
+    background-color: var(--background-light);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    margin-top: 60px;
+    position: relative;
+}
+
+.step-card {
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-color);
+    color: var(--background-white);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.step-card i {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.step-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+/* --- VISUAL FEATURES SECTION --- */
+.features {
+    padding: 100px 0;
+}
+
+.feature-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.feature-row:last-child {
+    margin-bottom: 0;
+}
+
+.feature-row.reverse {
+    grid-template-columns: 1fr 1fr; /* Explicitly set for ordering */
+}
+
+.feature-row.reverse .feature-text {
+    order: 2;
+}
+.feature-row.reverse .feature-image {
+    order: 1;
+}
+
+.feature-text h3 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.feature-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+/* --- PHONE MOCKUP STYLES (FOR DESKTOP) --- */
+@media (min-width: 992px) {
+    .hero-media {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .phone-mockup {
+        position: relative;
+        max-width: 320px; /* Largura do nosso celular */
+        width: 100%;
+        background-color: var(--text-dark);
+        border-radius: 40px; /* Bordas arredondadas do celular */
+        padding: 12px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    .phone-notch {
+        position: absolute;
+        top: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 18px;
+        background-color: var(--text-dark); /* Tem que ser a mesma cor do frame */
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        z-index: 10;
+    }
+
+    /* Remove a sombra do vídeo e ajusta as bordas para a tela */
+    .video-wrapper {
+        box-shadow: none; 
+        border-radius: 28px;
+    }
+}
+
+/* --- RESPONSIVE STYLES --- */
+@media (max-width: 992px) {
+
+ .main-header .container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .problem-grid, .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+    .offer-container {
+        grid-template-columns: 1fr;
+    }
+    .offer-content {
+        text-align: center;
+    }
+    .offer-content .section-title {
+        text-align: center;
+    }
+    .price-box, .cta-button {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title { font-size: 2rem; }
+    .hero-container { grid-template-columns: 1fr; text-align: center; }
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle, .hero-benefits { justify-content: center; }
+    .hero-benefits { flex-direction: column; align-items: center; }
+    .footer-container { flex-direction: column; gap: 20px; }
+    .feature-row, .feature-row.reverse {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .feature-row.reverse .feature-text,
+    .feature-row.reverse .feature-image {
+        order: initial; /* Resets the order on mobile */
+    }
+
+
+}
+

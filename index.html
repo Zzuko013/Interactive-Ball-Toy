@@ -32,6 +32,8 @@
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#offer">Special Offer</a></li>
                     <li><a href="#faq">FAQ</a></li>
+        <!-- ADICIONE ISSO -->
+        <li><a href="#offer" class="nav-cta-button">Buy Now</a></li>
                 </ul>
             </nav>
             
@@ -49,12 +51,25 @@
             <div class="hero-content">
                 <h1 class="hero-title">The most exciting hunt your pet will ever have.</h1>
                 <p class="hero-subtitle">End feline boredom. Keep your cat active, healthy, and happy with the intelligent ball that plays back.</p>
-                <div class="hero-benefits">
-                    <span><i class="fas fa-check"></i> Stimulates Hunting Instincts</span>
-                    <span><i class="fas fa-check"></i> Fights Feline Obesity</span>
-                    <span><i class="fas fa-check"></i> USB Rechargeable</span>
-                </div>
-                <a href="#offer" class="cta-button">Buy 1, Get 2nd 70% OFF & Free Shipping</a>
+            
+                  <div class="hero-rating">
+        <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i> <!-- Meia estrela para parecer mais autêntico! -->
+        </div>
+        <span class="rating-text">Based on 1,200+ Reviews</span>
+    </div>
+
+    <div class="hero-benefits">
+        <span><i class="fas fa-check"></i> Stimulates Hunting Instincts</span>
+        <span><i class="fas fa-check"></i> Fights Feline Obesity</span>
+        <span><i class="fas fa-check"></i> USB Rechargeable</span>
+    </div>  
+                <a href="#offer" class="cta-button">Secure My 70% Discount</a>
+                <p class="cta-support-text">Offer ends soon | 30-Day Money-Back Guarantee</p>
             </div>
             <div class="hero-media">
                 <div class="phone-mockup">
@@ -82,12 +97,12 @@
                     <p>Your cat scratches sofas and chairs out of sheer boredom and pent-up energy.</p>
                 </div>
                 <div class="problem-card">
-                    <i class="fas fa-weight-hanging"></i>
+                    <i class="fas fa-battery-quarter"></i>
                     <h3>Lethargy & Weight Gain</h3>
                     <p>An inactive lifestyle leads to obesity and health problems, costing you peace of mind (and vet bills).</p>
                 </div>
                 <div class="problem-card">
-                    <i class="fas fa-sad-tear"></i>
+                    <i class="fas fa-clock"></i>
                     <h3>Guilt & Loneliness</h3>
                     <p>You feel guilty leaving them alone all day, worried they are lonely or not stimulated enough.</p>
                 </div>
@@ -123,28 +138,77 @@
         </div>
     </section>
     
-    <!-- TESTIMONIALS SECTION (ID adicionado aqui) -->
-    <section id="testimonials" class="testimonials">
-        <!-- O conteúdo da seção continua aqui... -->
-        <div class="container">
-            <h2 class="section-title">Happy Cats, Happy Owners</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"My cat Frajola never scratched the sofa again! He loves this little ball."</p>
-                    <p class="testimonial-author">- Maria L., Los Angeles, USA</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"My kitten was scared at first, but just yesterday I saw her sleeping hugging the ball hahaha"</p>
-                    <p class="testimonial-author">- William R., San Diego, USA</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"Without a doubt, my cat seems more lively than before, and is losing a few pounds."</p>
-                    <p class="testimonial-author">- Lucas R., Toronto, CA</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- TESTIMONIALS SECTION ATUALIZADA (Opção 2 com Slider) -->
+<section id="testimonials" class="testimonials">
+    <div class="container">
+        <h2 class="section-title">Happy Cats, Happy Owners</h2>
 
+        <!-- Estrutura do Swiper.js -->
+        <div class="swiper testimonials-slider">
+            <div class="swiper-wrapper">
+
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <!-- Conteúdo do card (pode usar a estrutura da Opção 1 aqui dentro) -->
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote">"My cat never scratched the sofa again! He loves this little ball."</p>
+                        <div class="testimonial-author-info">
+                            <img src="https://i.pravatar.cc/50?u=maria" alt="Foto de Maria L.">
+                            <div class="author-details">
+                                <p class="testimonial-author">- Maria L.</p>
+                                <p class="testimonial-location">Los Angeles, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                       <!-- Conteúdo do card 2 -->
+                       <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="testimonial-quote">"My kitten was scared at first, but just yesterday I saw her sleeping hugging the ball hahaha"</p>
+                        <div class="testimonial-author-info">
+                            <img src="https://i.pravatar.cc/50?u=william" alt="Foto de William R.">
+                            <div class="author-details">
+                                <p class="testimonial-author">- William R.</p>
+                                <p class="testimonial-location">San Diego, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="testimonial-card">
+                        <!-- Conteúdo do card 3 -->
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-quote">"Without a doubt, my cat seems more lively than before, and is losing a few pounds."</p>
+                        <div class="testimonial-author-info">
+                            <img src="https://i.pravatar.cc/50?u=lucas" alt="Foto de Lucas R.">
+                            <div class="author-details">
+                                <p class="testimonial-author">- Lucas R.</p>
+                                <p class="testimonial-location">Toronto, CA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Adicione mais slides .swiper-slide aqui se precisar -->
+
+            </div>
+            <!-- Paginação (bolinhas) -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </div>
+</section>
     <!-- VISUAL FEATURES SECTION (ID adicionado aqui) -->
     <section id="features" class="features">
         <!-- O conteúdo da seção continua aqui... -->
@@ -210,6 +274,15 @@
                 <span class="price-new">$17.95</span>
                 <span class="price-old">$29.90</span>
             </div>
+            <!-- Coloque este bloco dentro do .offer-content, logo acima do botão de CTA -->
+
+<div class="countdown-container">
+    <h4 class="countdown-title">🔥Limited time offer:</h4>
+    <div id="timer" class="countdown-timer">
+        <!-- As caixas do tempo serão geradas pelo JavaScript aqui -->
+    </div>
+</div>
+            
 
             <!-- Pontos-Chave da Oferta -->
             <ul class="offer-benefits">
@@ -218,7 +291,7 @@
                 <li><i class="fas fa-check"></i> <strong>Pet-Safe Materials:</strong> Durable and non-toxic.</li>
             </ul>
 
-            <a href="#" class="cta-button">Claim My Discount Now</a>
+            <a href="https://buy.stripe.com/28EaEX5PIdYabUG9isao800" class="cta-button">Claim My Discount Now</a>
             
             <div class="guarantee-box">
                 <i class="fas fa-shield-alt"></i>
@@ -268,9 +341,9 @@
         <!-- O conteúdo do footer continua aqui... -->
          <div class="container footer-container">
             <div class="footer-brand">
-                <a href="#" class="logo">Paw & Joy</a>
-                <p>&copy; 2024. All Rights Reserved.</p>
-            </div>
+    <h3>Paw & Joy</h3>
+    <p>&copy; 2024. All Rights Reserved.</p>
+</div>
             <div class="footer-links">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
@@ -282,5 +355,4 @@
 <script src="script.js"></script>
 
 </body>
-
 </html>

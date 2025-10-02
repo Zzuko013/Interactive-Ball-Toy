@@ -1,952 +1,144 @@
-/* --- VARIABLES & GLOBAL STYLES --- */
-:root {
-    --primary-color: #0046d3; /* A sophisticated teal/green */
-    --primary-hover: #00877E;
-    --text-dark: #2d3748; /* Softer than pure black */
-    --text-light: #718096;
-    --background-light: #FAFAFA;
-    --background-white: #FFFFFF;
-    --border-color: #E2E8F0;
-    --font-family: 'Poppins', sans-serif;
-}
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+// Espera pelo evento 'DOMContentLoaded', que dispara quando todo o HTML
+// da página foi completamente carregado e analisado pelo navegador.
+document.addEventListener('DOMContentLoaded', () => {
 
-html {
-    scroll-behavior: smooth;
-}
+    // --- CÓDIGO DO MENU MOBILE ---
+    // (Este código também está seguro aqui dentro)
+    const navToggle = document.querySelector('.nav-toggle');
+    const mainHeader = document.querySelector('.main-header');
 
-body {
-    font-family: var(--font-family);
-    line-height: 1.7;
-    color: var(--text-dark);
-    background-color: var(--background-white);
-}
-
-.sales-notification {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    padding: 15px 20px;
-    z-index: 1001;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    display: none; /* Inicia oculto e o JS controla a exibição */
-}
-
-.sales-notification.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.notification-content {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.notification-content i {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-}
-
-#notification-text {
-    font-weight: 600;
-    margin: 0;
-}
-
-.notification-content span {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    margin: 0;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.cta-support-text{
-    font-size:1rem;
-    font-weight:200;
-    text-align: center;
-    margin-bottom:70;
-     padding: 20px 20px;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.left-aligned {
-    text-align: left;
-}
-
-/* --- HEADER --- */
-.main-header {
-    padding: 12px 0;
-    background-color: var(--background-white);
-    border-bottom: 1px solid var(--border-color);
-}
-
-.logo img {
-    max-width: 100px; /* Define a largura máxima da sua logo */
-    height: auto;     /* Mantém a proporção correta da imagem */
-    display: block;   /* Remove qualquer espaço extra abaixo da imagem */
-}
-
-/* --- HEADER & NAVIGATION --- */
-.main-header {
-    background-color: #fff;
-    padding: 15px 0;
-    position: sticky; /* Faz o header ficar fixo no topo */
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.main-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo img {
-    max-height: 40px; /* Ajuste a altura da sua logo */
-}
-
-.main-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    gap: 30px; /* Espaçamento entre os links */
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: var(--text-dark, #333); /* Use sua variável de cor ou um padrão */
-    font-weight: 600;
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.main-nav a:hover {
-    color: var(--primary-color, #007bff); /* Use sua variável de cor primária */
-}
-
-/* Oculta o botão de menu em telas grandes */
-.nav-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-.nav-cta-button {
-    background-color: var(--primary-color);
-    color: var(--background-white) !important; /* !important para sobrescrever outros estilos de link */
-    padding: 8px 20px;
-    border-radius: 6px;
-    transition: background-color 0.3s ease;
-}
-
-.nav-cta-button:hover {
-    background-color: var(--primary-hover);
-}
-
-
-/* --- ESTILOS PARA O MENU MOBILE (RESPONSIVO) --- */
-@media (max-width: 768px) {
-    .main-nav {
-        display: none; /* Esconde a navegação por padrão */
-        position: absolute;
-        top: 100%; /* Começa logo abaixo do header */
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    // Verifica se os elementos do menu existem antes de adicionar o evento
+    if (navToggle && mainHeader) {
+        navToggle.addEventListener('click', () => {
+            mainHeader.classList.toggle('nav-open');
+        });
     }
+// --- CÓDIGO DO CRONÔMETRO DE ESCASSEZ (VERSÃO APELATIVA) ---
+function startCountdown() {
+    const countdownElement = document.getElementById('timer');
+    if (!countdownElement) return;
 
-    /* Mostra o menu quando o header tiver a classe .nav-open */
-    .main-header.nav-open .main-nav {
-        display: block;
-    }
+    // =================================================================
+    // ||           É AQUI QUE VOCÊ MUDA O TEMPO!                     ||
+    // =================================================================
+    // Sintaxe: (HORAS * 60 * 60 * 1000)
+    const hoursToAdd = 8; // <<<<<<<<<<< MUDE O NÚMERO DE HORAS AQUI
+    let endTime = new Date().getTime() + (hoursToAdd * 60 * 60 * 1000); 
+    // =================================================================
+
+    const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = endTime - now;
+
+        if (distance < 0) {
+            clearInterval(interval);
+            countdownElement.innerHTML = "<div class='timer-expired'>Offer expired!</div>";
+            return;
+        }
+
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Atualiza o HTML para criar as caixas
+        countdownElement.innerHTML = `
+            <div class="timer-box">
+                <span class="time-value">${String(hours).padStart(2, '0')}</span>
+                <span class="time-label">Hours</span>
+            </div>
+            <div class="timer-box">
+                <span class="time-value">${String(minutes).padStart(2, '0')}</span>
+                <span class="time-label">Minutes</span>
+            </div>
+            <div class="timer-box">
+                <span class="time-value">${String(seconds).padStart(2, '0')}</span>
+                <span class="time-label">Seconds</span>
+            </div>
+        `;
+
+    }, 1000);
+}
+
+// Não se esqueça de chamar a função dentro do 'DOMContentLoaded'
+document.addEventListener('DOMContentLoaded', () => {
+    // ... seu código do menu mobile aqui ...
     
-    .main-nav ul {
-        flex-direction: column;
-        gap: 0;
-    }
+    startCountdown(); // Chama a função do cronômetro
+});
+startCountdown();
 
-    .main-nav li a {
-        display: block;
-        padding: 15px 20px;
-        text-align: center;
-        border-bottom: 1px solid #f0f0f0;
-    }
+// Coloque este código dentro do seu "document.addEventListener('DOMContentLoaded', () => { ... });"
 
-    /* Mostra o botão de menu (hambúrguer) em telas pequenas */
-    .nav-toggle {
-        display: block;
-    }
-}
+// --- CÓDIGO DO SLIDER DE DEPOIMENTOS ---
+const testimonialsSlider = new Swiper('.testimonials-slider', {
+    // Quantos slides mostrar por vez
+    slidesPerView: 1,
+    // Espaço entre os slides
+    spaceBetween: 30,
+    // Ativa o loop
+    loop: true,
 
-/* --- HERO SECTION --- */
-.hero {
-    padding: 40px 0;
-}
-
-.hero-container {
-    display: grid;
-    /* Por padrão (mobile), terá uma coluna */
-    grid-template-columns: 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-/* Adicione esta Media Query para telas maiores (desktop) */
-@media (min-width: 768px) {
-    .hero-container {
-        /* Em telas maiores, muda para duas colunas de tamanho igual */
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-.hero-title {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.hero-subtitle {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    margin-bottom: 30px;
-    max-width: 50ch; /* Improves readability */
-}
-
-.hero-rating {
-    display: flex; /* Alinha estrelas e texto lado a lado */
-    align-items: center; /* Centraliza verticalmente */
-    gap: 10px; /* Espaço entre as estrelas e o texto */
-    margin-bottom: 30px; /* Espaço abaixo, antes dos "benefits" */
-}
-
-.hero-rating .stars {
-    color: #fdd835; /* Cor clássica de estrela (amarelo/dourado) */
-    font-size: 1.2rem; /* Tamanho para bom destaque */
-}
-
-.hero-rating .rating-text {
-    font-weight: 600; /* Levemente em negrito para dar importância */
-    color: var(--text-dark, #333); /* Cor do texto, pode ajustar se necessário */
-    font-size: 1rem;
-}
-.hero-benefits {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 40px;
-}
-
-.hero-benefits span {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 600;
-}
-
-.hero-benefits .fa-check {
-    color: var(--primary-color);
-}
-
-.video-wrapper {
-    width: 100%;
-    border-radius: 12px;
-    overflow:hidden;
-    box-shadow: 0 30px 40px rgba(0,0,0,0.1);
-}
-
-.video-wrapper video {
-    width: 100%;
-    display: block;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--background-white);
-    padding: 16px 32px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: var(--primary-hover);
-    transform: translateY(-3px);
-}
-
-/* --- TESTIMONIALS SECTION --- */
-.testimonials {
-    padding: 40px 0;
-    background-color: var(--background-light);
-}
-
-.testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.testimonial-card {
-    background-color: var(--background-white);
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-}
-
-.testimonial-quote {
-    font-size: 1rem;
-    flex-grow: 1;
-    margin-bottom: 20px;
-}
-
-.testimonial-author {
-    font-weight: 600;
-    color: var(--text-dark);
-}
-
-.offer-container {
-    display: grid;
-    grid-template-columns: 1fr; /* Uma coluna no mobile por padrão */
-    gap: 40px;
-    align-items: center;
-}
-
-/* Em telas maiores, o layout muda para duas colunas */
-@media (min-width: 768px) {
-    .offer-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: flex-start; /* Alinha pelo topo, fica mais elegante */
-    }
-}
-
-/* 2. O Contêiner do Slider */
-
-/* 3. O Slide Individual (Dentro do Slider) */
-.product-swiper .swiper-slide {
-    /* Remove o fundo de degradê que a biblioteca do Swiper adiciona por padrão */
-    background: transparent;
-}
-
-/* 4. A Imagem (Dentro do Slide) */
-.product-swiper .swiper-slide img {
-    /* Faz a imagem preencher 100% do espaço do slide que agora tem um tamanho definido */
-    display: block;
-    width: 100%;
-    height: 100%;
+    // Configurações da paginação (as bolinhas)
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
     
-    /* Garante que a imagem cubra o espaço sem distorcer (corta o excesso se necessário) */
-    object-fit: cover;
-}
-
-/* 5. Estilos para os Controles do Slider */
-.swiper-button-next,
-.swiper-button-prev {
-    color: var(--primary-color, #0046d3);
-}
-
-.swiper-pagination-bullet-active {
-    background-color: var(--primary-color, #0046d3);
-}
-
-
-/* 6. Estilos para o Conteúdo de Texto (Estrelas, Benefícios, etc.) */
-/* (Estes são os estilos que você já tinha, que estavam corretos) */
-.star-rating {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-bottom: 20px;
-    color: #fdd835;
-}
-
-.star-rating span {
-    color: var(--text-light, #555);
-    font-size: 0.9rem;
-    margin-left: 5px;
-}
-
-.offer-benefits {
-    list-style: none;
-    padding: 0;
-    margin: 25px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.offer-benefits li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.offer-benefits .fa-check {
-    color: var(--primary-color, #007bff);
-}
-
-/* --- ESTILO DE DESTAQUE PARA A GARANTIA (CARD) --- */
-
-.guarantee-box {
-    display: flex; /* Alinha o ícone e o texto lado a lado */
-    align-items: center; /* Centraliza verticalmente o ícone com o texto */
-    gap: 15px; /* Espaço entre o ícone e o texto */
-    
-    background-color: #f8f9fa; /* Um fundo cinza muito claro para criar o card */
-    border: 1px solid #e9ecef; /* Uma borda sutil para definir as arestas */
-    border-radius: 8px; /* Cantos arredondados para um visual moderno */
-    padding: 20px; /* Espaçamento interno generoso */
-    margin-top: 30px; /* Espaço acima para separar do botão de compra */
-    
-    /* Opcional: uma sombra suave para dar profundidade e destacar ainda mais */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
-}
-
-/* Estilo para o ícone de escudo dentro do card */
-.guarantee-box .fa-shield-alt {
-    font-size: 2.2rem; /* Aumenta o tamanho do ícone para ter mais presença */
-    color: var(--primary-color, #007bff); /* Usa a cor principal para o ícone, criando um ponto de confiança */
-}
-
-/* Ajustes no parágrafo dentro do card */
-.guarantee-box p {
-    margin: 0; /* Remove a margem padrão do parágrafo que pode causar espaçamento indesejado */
-    font-size: 0.9rem; /* Tamanho de fonte ideal para texto de apoio */
-    line-height: 1.5; /* Melhora a legibilidade */
-}
-/* --- ESTILO DE DESTAQUE PARA O PREÇO --- */
-
-.price-box {
-    display: flex;
-    align-items: baseline; /* Alinha os preços pela base, fica ótimo com fontes de tamanhos diferentes */
-    gap: 15px;
-    margin: 20px 0; /* Adiciona um espaço vertical para respirar */
-}
-
-.price-new {
-    font-size: 2.8rem; /* BEM GRANDE para chamar atenção */
-    font-weight: 700; /* Negrito */
-    color: var(--primary-color, #007bff); /* Usa a cor primária do seu site para criar consistência */
-    line-height: 1;
-}
-
-.price-old {
-    font-size: 1.5rem; /* Menor que o preço novo */
-    color: var(--text-light, #888); /* Cor cinza, para indicar que não é o preço principal */
-    text-decoration: line-through; /* RISCADO para mostrar que é o preço antigo */
-}
-    /* --- ESTILOS DO CRONÔMETRO APELATIVO --- */
-
-.countdown-container {
-    background-color: #fff8e1; /* Um amarelo bem claro para destacar a oferta */
-    border: 1px solid #ffecb3;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 30px 0; /* Espaçamento acima e abaixo */
-    text-align: center;
-}
-
-.countdown-title {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 15px;
-}
-
-.countdown-timer {
-    display: flex;
-    justify-content: center;
-    gap: 15px; /* Espaço entre as caixas */
-}
-
-.timer-box {
-    background-color: var(--background-white);
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
-    padding: 10px;
-    min-width: 60px; /* Largura mínima para cada caixa */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.timer-box span {
-    display: block; /* Faz com que o número e o texto fiquem em linhas separadas */
-    font-weight: 700;
-}
-
-/* Estilo para o NÚMERO (grande e em destaque) */
-.timer-box .time-value {
-    font-size: 2rem;
-    color: var(--primary-color);
-    line-height: 1.1;
-}
-
-/* Estilo para o TEXTO (pequeno e informativo) */
-.timer-box .time-label {
-    font-size: 0.7rem;
-    color: var(--text-light);
-    text-transform: uppercase;
-    margin-top: 5px;
-}
-
-/* Estilo para quando o tempo acabar */
-.timer-expired {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #d32f2f; /* Um vermelho para indicar que a oferta expirou */
-}
-css
-.trust-seals {
-    text-align: center;
-    margin-top: 1.2rem;
-}
-.trust-seals img {
-    max-width: 100px; /* Ajuste o tamanho conforme a imagem que usar */
-    opacity: 0.7;
-}
-/* --- AJUSTES PARA A SEÇÃO DE OFERTA NO MOBILE --- */
-@media (max-width: 767px) {
-
-    .offer-content {
-        text-align: center; /* Centraliza todo o conteúdo de texto */
+    // Configurações responsivas
+    breakpoints: {
+        // Quando a largura da tela for >= 768px
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 30
+        },
+        // Quando a largura da tela for >= 992px
+        992: {
+            slidesPerView: 3,
+            spaceBetween: 30
+        }
     }
+});
 
-    /* O título da seção já é centralizado, mas garantimos que o alinhamento esquerdo seja removido */
-    .offer-content .section-title.left-aligned {
-        text-align: center;
-    }
+// Coloque este código dentro do seu "document.addEventListener('DOMContentLoaded', () => { ... });"
 
-    /* Centraliza os itens dentro de caixas flex (preço, estrelas e garantia) */
-    .price-box,
-    .star-rating,
-    .guarantee-box {
-        justify-content: center;
-    }
+// --- CÓDIGO DE NOTIFICAÇÃO DE VENDAS (VERSÃO EUA) ---
+function showSalesNotification() {
+    const notification = document.getElementById('sales-notification');
+    const notificationText = document.getElementById('notification-text');
+    if (!notification || !notificationText) return; // Garante que os elementos existem
 
-    /* Ajusta o tamanho do preço para não ser tão exagerado no mobile */
-    .price-new {
-        font-size: 2.5rem; /* Um pouco menor que no desktop, mas ainda com impacto */
-    }
-    .price-old {
-        font-size: 1.3rem; /* Reduz o preço antigo proporcionalmente */
-    }
+    // Arrays com nomes e cidades comuns nos EUA
+    const names = ["Jessica P.", "Michael B.", "Emily R.", "Chris L.", "Sarah K.", "David M.", "Ashley T.", "James W."];
+    const locations = ["New York, NY", "Los Angeles, CA", "Chicago, IL", "Houston, TX", "Phoenix, AZ", "Miami, FL", "Dallas, TX", "Seattle, WA"];
 
-    /* 
-      A MUDANÇA MAIS IMPORTANTE:
-      Ocultamos os bullet points da oferta e o texto ao lado das estrelas.
-      Isso limpa MUITO o layout, focando no que importa: Prova Social (estrelas), Preço e CTA.
-    */
-    .offer-benefits,
-    .star-rating span {
-        display: none;
-    }
+    // Escolhe um nome e uma cidade aleatoriamente
+    const randomName = names[Math.floor(Math.random() * names.length)];
+    const randomLocation = locations[Math.floor(Math.random() * locations.length)];
 
-    /* Garante que o botão de CTA ocupe uma largura maior para facilitar o clique */
-    .cta-button {
-        width: 100%; /* Faz o botão ocupar a largura total */
-        max-width: 350px; /* Mas limita para não ficar estranho em telas um pouco maiores */
-        margin: 0 auto; /* Centraliza o botão */
-    }
-}
-/* --- FAQ SECTION --- */
-.faq {
-    padding: 40px 0;
-    background-color: var(--background-light);
+    // Atualiza o texto da notificação
+    notificationText.innerHTML = `<strong>${randomName}</strong> from ${randomLocation}`;
+
+    // Mostra a notificação
+    notification.style.display = 'flex';
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 100); // Pequeno delay para a transição funcionar
+
+    // Esconde a notificação depois de 5 segundos
+    setTimeout(() => {
+        notification.classList.remove('show');
+        // Espera a transição de fade-out terminar antes de esconder o elemento
+        setTimeout(() => {
+             notification.style.display = 'none';
+        }, 500);
+    }, 5000);
 }
 
-.faq-container {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    border-bottom: 1px solid var(--border-color);
-}
-
-.faq-item details {
-    padding: 20px 0;
-}
-
-.faq-item summary {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    cursor: pointer;
-    outline: none;
-    list-style: none; /* Remove default marker */
-}
-
-.faq-item summary::-webkit-details-marker { display: none; }
-
-.faq-item summary .fa-chevron-down {
-    transition: transform 0.3s ease;
-}
-
-.faq-item details[open] summary .fa-chevron-down {
-    transform: rotate(180deg);
-}
-
-.faq-item p {
-    margin-top: 15px;
-    color: var(--text-light);
-    padding-right: 20px;
-}
-
-/* --- FOOTER --- */
-.main-footer {
-    padding: 40px 0;
-    background-color: var(--background-white);
-    border-top: 1px solid var(--border-color);
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-brand p {
-    font-size: 0.9rem;
-    color: var(--text-light);
-    margin-top: 5px;
-}
-
-.footer-links {
-    display: flex;
-    gap: 25px;
-}
-
-.footer-links a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-    color: var(--primary-color);
-}
-
-/* --- PROBLEM SECTION --- */
-.problem {
-    padding: 60px 0;
-    background-color: var(--background-white);
-}
-
-.problem-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 50px;
-}
-
-.problem-card {
-    text-align: center;
-}
-
-.problem-card i {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.problem-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-}
-
-/* --- HOW IT WORKS SECTION --- */
-.how-it-works {
-    padding: 60px  0;
-    background-color: var(--background-light);
-}
-
-.steps-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
-    margin-top: 60px;
-    position: relative;
-}
-
-.step-card {
-    text-align: center;
-    position: relative;
-}
-
-.step-number {
-    position: absolute;
-    top: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--primary-color);
-    color: var(--background-white);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.2rem;
-}
-
-.step-card i {
-    font-size: 3.5rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
-
-.step-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-}
-
-/* --- VISUAL FEATURES SECTION --- */
-.features {
-    padding: 100px 0;
-}
-
-.feature-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    margin-bottom: 40px;
-}
-
-.feature-row:last-child {
-    margin-bottom: 0;
-}
-
-.feature-row.reverse {
-    grid-template-columns: 1fr 1fr; /* Explicitly set for ordering */
-}
-
-.feature-row.reverse .feature-text {
-    order: 2;
-}
-.feature-row.reverse .feature-image {
-    order: 1;
-}
-
-.feature-text h3 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.feature-image img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-/* --- PHONE MOCKUP STYLES (FOR DESKTOP) --- */
-@media (min-width: 992px) {
-    .hero-media {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .phone-mockup {
-        position: relative;
-        max-width: 320px; /* Largura do nosso celular */
-        width: 100%;
-        background-color: var(--text-dark);
-        border-radius: 40px; /* Bordas arredondadas do celular */
-        padding: 12px;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    }
-
-    .phone-notch {
-        position: absolute;
-        top: 12px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 18px;
-        background-color: var(--text-dark); /* Tem que ser a mesma cor do frame */
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        z-index: 10;
-    }
-
-    /* Remove a sombra do vídeo e ajusta as bordas para a tela */
-    .video-wrapper {
-        box-shadow: none; 
-        border-radius: 28px;
-    }
-}
-
-/* --- RESPONSIVE STYLES --- */
-@media (max-width: 992px) {
-
- .main-header .container {
-        display: flex;
-        justify-content: center;
-    }
-
-    .problem-grid, .steps-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    .testimonial-grid {
-        grid-template-columns: 1fr;
-    }
-    .offer-container {
-        grid-template-columns: 1fr;
-    }
-    .offer-content {
-        text-align: center;
-    }
-    .offer-content .section-title {
-        text-align: center;
-    }
-  .stock-counter {
-    background-color: #fffde7; /* Amarelo bem claro */
-    border: 1px solid #fff59d;
-    border-radius: 6px;
-    padding: 12px;
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: #5d4037;
-}
-.stock-counter b {
-    color: #d84315; /* Laranja/vermelho escuro */
-    font-weight: 700;
-}
-    .price-box, .cta-button {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center; /* Regra principal que centraliza textos e botões */
-}
-
-.hero-title {
-    font-size: 2.5rem;
-}
-
-/* --- CORREÇÃO PRINCIPAL AQUI --- */
-/* Força os containers flex a centralizarem seu conteúdo interno */
-.hero-rating,
-.hero-benefits {
-    justify-content: center;
-}
-
-/* Garante que os itens de benefício fiquem centralizados quando em coluna */
-.hero-benefits {
-    flex-direction: column;
-    align-items: center;
-}
-    .footer-container { flex-direction: column; gap: 20px; }
-    .feature-row, .feature-row.reverse {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .feature-row.reverse .feature-text,
-    .feature-row.reverse .feature-image {
-        order: initial; /* Resets the order on mobile */
-    }
-/* --- ESTILOS MELHORADOS PARA OS TESTIMONIALS --- */
-
-.testimonial-card {
-    display: flex;
-    flex-direction: column; /* Garante que os itens fiquem empilhados verticalmente */
-    box-shadow: 0 8px 16px rgba(0,0,0,0.07); /* Adiciona uma sombra mais pronunciada */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px); /* Efeito de elevação sutil no hover */
-    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-}
-
-.testimonial-stars {
-    color: #fdd835; /* Cor dourada para as estrelas */
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-
-.testimonial-quote {
-    font-style: italic; /* Itálico ajuda a diferenciar a citação */
-    color: var(--text-dark);
-    flex-grow: 1; /* Faz a citação ocupar o espaço disponível, empurrando o autor para baixo */
-    margin-bottom: 20px;
-}
-
-.testimonial-author-info {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Espaço entre a foto e o texto */
-    margin-top: auto; /* Alinha este bloco na parte inferior do card */
-}
-
-.testimonial-author-info img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%; /* Deixa a imagem redonda */
-    object-fit: cover; /* Garante que a imagem não fique distorcida */
-}
-
-.testimonial-author {
-    font-weight: 700;
-    color: var(--text-dark);
-    margin: 0;
-}
-
-.testimonial-location {
-    font-size: 0.85rem;
-    color: var(--text-light);
-    margin: 0;
-}
-/* --- ESTILOS ADICIONAIS PARA O SLIDER DE TESTIMONIALS --- */
-
-.testimonials-slider {
-    padding-bottom: 50px; /* Espaço para a paginação não ficar colada */
-}
-
-.testimonials-slider .swiper-slide {
-    height: auto; /* Permite que os cards tenham alturas flexíveis se necessário */
-}
-
-.testimonials-slider .swiper-pagination-bullet-active {
-    background-color: var(--primary-color); /* Usa a cor principal do seu site */
-}
-}
-
+// Inicia o ciclo de notificações de forma aleatória para parecer mais real
+// A primeira notificação aparecerá depois de ~7 segundos
+setTimeout(() => {
+    showSalesNotification(); // Mostra a primeira
+    // As próximas aparecerão em intervalos aleatórios entre 8 e 20 segundos
+    setInterval(showSalesNotification, Math.random() * (20000 - 8000) + 8000);
+}, 7000);
+}); // Fim do addEventListener

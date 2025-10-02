@@ -26,6 +26,48 @@ body {
     background-color: var(--background-white);
 }
 
+.sales-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    padding: 15px 20px;
+    z-index: 1001;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    display: none; /* Inicia oculto e o JS controla a exibição */
+}
+
+.sales-notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notification-content i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+#notification-text {
+    font-weight: 600;
+    margin: 0;
+}
+
+.notification-content span {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -481,6 +523,15 @@ body {
     font-weight: 700;
     color: #d32f2f; /* Um vermelho para indicar que a oferta expirou */
 }
+css
+.trust-seals {
+    text-align: center;
+    margin-top: 1.2rem;
+}
+.trust-seals img {
+    max-width: 100px; /* Ajuste o tamanho conforme a imagem que usar */
+    opacity: 0.7;
+}
 /* --- AJUSTES PARA A SEÇÃO DE OFERTA NO MOBILE --- */
 @media (max-width: 767px) {
 
@@ -782,6 +833,20 @@ body {
     .offer-content .section-title {
         text-align: center;
     }
+  .stock-counter {
+    background-color: #fffde7; /* Amarelo bem claro */
+    border: 1px solid #fff59d;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #5d4037;
+}
+.stock-counter b {
+    color: #d84315; /* Laranja/vermelho escuro */
+    font-weight: 700;
+}
     .price-box, .cta-button {
         justify-content: center;
     }
@@ -853,8 +918,8 @@ body {
 }
 
 .testimonial-author-info img {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%; /* Deixa a imagem redonda */
     object-fit: cover; /* Garante que a imagem não fique distorcida */
 }

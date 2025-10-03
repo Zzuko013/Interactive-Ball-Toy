@@ -8,6 +8,7 @@
     --background-white: #FFFFFF;
     --border-color: #E2E8F0;
     --font-family: 'Poppins', sans-serif;
+    --spacing-section: 40px; /* <<-- Controle o espaçamento de todas as seções aqui! */
 }
 * {
     box-sizing: border-box;
@@ -71,7 +72,7 @@ body {
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 18px;
 }
 
 .cta-support-text{
@@ -204,7 +205,7 @@ body {
 
 /* --- HERO SECTION --- */
 .hero {
-    padding: 40px 0;
+     padding: var(--spacing-section) 0;
 }
 
 .hero-container {
@@ -303,7 +304,7 @@ body {
 
 /* --- TESTIMONIALS SECTION --- */
 .testimonials {
-    padding: 40px 0;
+     padding: var(--spacing-section) 0;
     background-color: var(--background-light);
 }
 
@@ -523,14 +524,17 @@ body {
     font-weight: 700;
     color: #d32f2f; /* Um vermelho para indicar que a oferta expirou */
 }
-css
 .trust-seals {
-    text-align: center;
-    margin-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    gap: 15px;
 }
 .trust-seals img {
-    max-width: 100px; /* Ajuste o tamanho conforme a imagem que usar */
-    opacity: 0.7;
+    height: 35px; /* Ajuste o tamanho conforme a imagem que usar */
+    opacity: 0.6;
 }
 /* --- AJUSTES PARA A SEÇÃO DE OFERTA NO MOBILE --- */
 @media (max-width: 767px) {
@@ -578,7 +582,7 @@ css
 }
 /* --- FAQ SECTION --- */
 .faq {
-    padding: 40px 0;
+    padding: var(--spacing-section) 0;
     background-color: var(--background-light);
 }
 
@@ -623,7 +627,7 @@ css
 
 /* --- FOOTER --- */
 .main-footer {
-    padding: 40px 0;
+    padding: var(--spacing-section) 0;
     background-color: var(--background-white);
     border-top: 1px solid var(--border-color);
 }
@@ -658,7 +662,7 @@ css
 
 /* --- PROBLEM SECTION --- */
 .problem {
-    padding: 60px 0;
+     padding: var(--spacing-section) 0;
     background-color: var(--background-white);
 }
 
@@ -686,7 +690,7 @@ css
 
 /* --- HOW IT WORKS SECTION --- */
 .how-it-works {
-    padding: 60px  0;
+    padding: var(--spacing-section) 0;
     background-color: var(--background-light);
 }
 
@@ -733,7 +737,7 @@ css
 
 /* --- VISUAL FEATURES SECTION --- */
 .features {
-    padding: 100px 0;
+    padding: calc(var(--spacing-section) + 15px) 0;
 }
 
 .feature-row {

@@ -528,8 +528,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
     gap: 15px;
 }
 .trust-seals img {
@@ -953,4 +953,5 @@ body {
     background-color: var(--primary-color); /* Usa a cor principal do seu site */
 }
 }
+
 

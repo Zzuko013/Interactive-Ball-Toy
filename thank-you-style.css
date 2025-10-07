@@ -1,7 +1,5 @@
-/* --- THANK YOU PAGE STYLES --- */
 
 body {
-    /* Uses variables from your main style.css */
     background-color: var(--background-light); 
     display: flex;
     justify-content: center;

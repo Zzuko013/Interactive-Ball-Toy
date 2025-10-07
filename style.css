@@ -1035,15 +1035,6 @@ body {
     background-color: var(--primary-color); /* Usa a cor principal do seu site */
 }
     
-body {
-    background-color: var(--background-light); 
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding: 40px 20px;
-}
-
 .thank-you-container {
     max-width: 700px;
     width: 100%;
@@ -1192,6 +1183,7 @@ body {
     }
 }
 }
+
 
 
 

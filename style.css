@@ -334,7 +334,6 @@ body {
     background-color: var(--primary-hover);
     transform: translateY(-3px);
 }
-
 .shipping-info {
     text-align: center;
     margin-top: 20px;
@@ -1051,3 +1050,4 @@ body {
     background-color: var(--primary-color); /* Usa a cor principal do seu site */
 }
 }
+

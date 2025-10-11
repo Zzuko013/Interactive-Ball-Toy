@@ -335,6 +335,21 @@ body {
     transform: translateY(-3px);
 }
 
+.shipping-info {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+.shipping-info p {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0;
+}
+.shipping-info span {
+    font-size: 0.85rem;
+}
+
 /* --- TESTIMONIALS SECTION --- */
 .testimonials {
      padding: var(--spacing-section) 0;
@@ -936,6 +951,7 @@ body {
     .price-box, .cta-button {
         justify-content: center;
     }
+
 }
 
 @media (max-width: 768px) {
@@ -1034,29 +1050,4 @@ body {
 .testimonials-slider .swiper-pagination-bullet-active {
     background-color: var(--primary-color); /* Usa a cor principal do seu site */
 }
-    
-.thank-you-container {
-    max-width: 700px;
-    width: 100%;
 }
-
-.confirmation-box {
-    background-color: var(--background-white);
-    border-radius: 12px;
-    padding: 40px;
-    text-align: center;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-}
-
-.confirmation-icon {
-    font-size: 4rem;
-    color: #2e7d32; /* A nice, positive green */
-    margin-bottom: 20px;
-}
-}
-
-
-
-
-

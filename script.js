@@ -1,16 +1,6 @@
 // Espera pelo evento 'DOMContentLoaded', que dispara quando todo o HTML
 // da página foi completamente carregado e analisado pelo navegador.
 document.addEventListener('DOMContentLoaded', () => {
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17632335659">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17632335659');
-</script>
     // --- CÓDIGO DO MENU MOBILE ---
     // (Este código também está seguro aqui dentro)
     const navToggle = document.querySelector('.nav-toggle');
@@ -151,4 +141,5 @@ setTimeout(() => {
     setInterval(showSalesNotification, Math.random() * (20000 - 8000) + 8000);
 }, 7000);
 }); // Fim do addEventListener
+
 

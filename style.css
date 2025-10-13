@@ -25,6 +25,7 @@ body {
     line-height: 1.7;
     color: var(--text-dark);
     background-color: var(--background-white);
+    padding-top: 70px;
 }
 
 .sales-notification {
@@ -1085,6 +1086,7 @@ body {
     background-color: var(--primary-color); /* Usa a cor principal do seu site */
 }
 }
+
 
 
 

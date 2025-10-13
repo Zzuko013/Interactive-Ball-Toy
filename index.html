@@ -44,72 +44,104 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <!-- O resto da sua seção hero continua aqui... -->
-        <div class="container hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">The most exciting hunt your pet will ever have.</h1>
-                <p class="hero-subtitle">End feline boredom. Keep your cat active, healthy, and happy with the intelligent ball that plays back.</p>
-            
-                  <div class="hero-rating">
-        <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i> <!-- Meia estrela para parecer mais autêntico! -->
-        </div>
-        <span class="rating-text">Based on 1,200+ Reviews</span>
+     <div id="anuncio-banner" class="anuncio-topo">
+         <span>40% discount for:</span>
+         <span id="cronometro"></span>
     </div>
 
-    <div class="hero-benefits">
-        <span><i class="fas fa-check"></i> Stimulates Hunting Instincts</span>
-        <span><i class="fas fa-check"></i> Fights Feline Obesity</span>
-        <span><i class="fas fa-check"></i> USB Rechargeable</span>
-    </div>  
-                <a href="#offer" class="cta-button">Secure My 70% Discount</a>
-                <p class="cta-support-text">Offer ends soon | 30-Day Money-Back Guarantee</p>
+    <!-- HERO SECTION - NEW STRUCTURE -->
+<section class="hero">
+    <div class="container hero-container">
+
+        <!-- BLOCK 1: INTRO TEXT (Title, Subtitle, Rating) -->
+        <div class="hero-intro">
+            <h1 class="hero-title">The most <span>exciting hunt</span> your pet will ever have.</h1>
+            <p class="hero-subtitle">End feline boredom. Keep your cat active, healthy, and happy with the intelligent ball that plays back.</p>
+            <div class="hero-rating">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="rating-text">Based on 1,200+ Reviews</span>
             </div>
-            <div class="hero-media">
-                <div class="phone-mockup">
-                    <div class="phone-notch"></div>
-                    <div class="video-wrapper">
-                       <video controls autoplay muted loop playsinline>
-                          <source src="media/video legendado (1).webm" type="video/mp4">
-                          Seu navegador não suporta o elemento de vídeo.
-                       </video>
-                    </div>
+        </div>
+
+        <!-- BLOCK 2: MEDIA (The Video) -->
+        <div class="hero-media">
+            <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <div class="video-wrapper">
+                   <video controls autoplay muted loop playsinline>
+                      <source src="media/video legendado (1).mp4" type="video/mp4">
+                      Your browser does not support the video element.
+                   </video>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- PROBLEM & AGITATION SECTION -->
-    <section class="problem">
-        <!-- O conteúdo da seção continua aqui... -->
-        <div class="container">
-            <h2 class="section-title">Does This Sound Familiar?</h2>
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <i class="fas fa-couch"></i>
-                    <h3>Destroyed Furniture</h3>
-                    <p>Your cat scratches sofas and chairs out of sheer boredom and pent-up energy.</p>
-                </div>
-                <div class="problem-card">
-                    <i class="fas fa-battery-quarter"></i>
-                    <h3>Lethargy & Weight Gain</h3>
-                    <p>An inactive lifestyle leads to obesity and health problems, costing you peace of mind (and vet bills).</p>
-                </div>
-                <div class="problem-card">
-                    <i class="fas fa-clock"></i>
-                    <h3>Guilt & Loneliness</h3>
-                    <p>You feel guilty leaving them alone all day, worried they are lonely or not stimulated enough.</p>
-                </div>
+        <!-- BLOCK 3: CTA (Benefits and Button) -->
+        <div class="hero-cta">
+            <div class="hero-benefits">
+                <span><i class="fas fa-check"></i> Stimulates Hunting Instincts</span>
+                <span><i class="fas fa-check"></i> Fights Feline Obesity</span>
+                <span><i class="fas fa-check"></i> USB Rechargeable</span>
+            </div>  
+            <a href="#offer" class="cta-button">Secure My 40% Discount</a>
+            <p class="cta-support-text">Offer ends soon | 30-Day Money-Back Guarantee</p>
+        </div>
+        
+    </div>
+</section>
+
+    <!-- NEW PROBLEM/SOLUTION SECTION (REPLACES THE TWO OLD ONES) -->
+<section id="features" class="problem-solution">
+    <div class="container">
+        <h2 class="section-title">The Problems x <span>Smart Solutions</span></h2>
+
+        <!-- FEATURE 1 -->
+        <div class="solution-row">
+            <div class="solution-video">
+        <video autoplay loop muted playsinline>
+            <source src="media/cachorro bolinha.webm" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+        </video>
+    </div>
+            <div class="solution-content">
+                <div class="problem-tag">THE PROBLEM</div>
+                <h3>Destroyed Furniture</h3>
+                <p>Your pet scratches sofas and chairs out of sheer boredom and pent-up energy, leaving you with frustration and repair bills.</p>
+                
+                <div class="solution-tag">THE SOLUTION</div>
+                <h3>Smart Motion Sensor</h3>
+                <p>The ball automatically detects and avoids obstacles, keeping it in constant motion. The hunt never stops, and your furniture stays safe!</p>
             </div>
         </div>
-    </section>
 
+        <!-- FEATURE 2 (REVERSED ORDER) -->
+        <div class="solution-row reverse">
+            <div class="solution-video2">
+        <video autoplay loop muted playsinline>
+            <source src="media/carregando bolinha.webm" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+        </video>
+    </div>
+            <div class="solution-content">
+                <div class="problem-tag">THE PROBLEM</div>
+                <h3>Lethargy & Weight Gain</h3>
+                <p>An inactive lifestyle leads to obesity and health issues, costing you peace of mind (and expensive vet bills).</p>
+
+                <div class="solution-tag">THE SOLUTION</div>
+                <h3>Durable & Pet-Safe Material</h3>
+                <p>Crafted from high-impact, non-toxic ABS plastic, the Paw & Joy ball is designed to withstand even the most enthusiastic hunters, promoting healthy exercise.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+   
     <!-- HOW IT WORKS SECTION (ID adicionado aqui) -->
     <section id="how-it-works" class="how-it-works">
         <!-- O conteúdo da seção continua aqui... -->
@@ -209,30 +241,6 @@
 
     </div>
 </section>
-    <!-- VISUAL FEATURES SECTION (ID adicionado aqui) -->
-    <section id="features" class="features">
-        <!-- O conteúdo da seção continua aqui... -->
-        <div class="container">
-            <div class="feature-row">
-                <div class="feature-text">
-                    <h3>Smart Motion Sensor</h3>
-                    <p>The ball automatically avoids obstacles, preventing it from getting stuck under furniture. The hunt never stops!</p>
-                </div>
-                <div class="feature-image">
-                    <img src="https://m.media-amazon.com/images/I/61C8hRv70dL._UF1000,1000_QL80_.jpg" alt="Cat playing with the ball near a sofa">
-                </div>
-            </div>
-            <div class="feature-row reverse">
-                <div class="feature-text">
-                    <h3>Durable & Pet-Safe</h3>
-                    <p>Crafted from high-impact, non-toxic ABS plastic, the Paw & Joy ball is designed to withstand even the most enthusiastic hunters.</p>
-                </div>
-                <div class="feature-image">
-                    <img src="https://m.media-amazon.com/images/I/619kPz+VBwL._AC_SX679_.jpg" alt="Close-up of the ball's durable material and USB port">
-                </div>
-            </div>
-        </div>
-    </section>
 
    <!-- OFFER SECTION ATUALIZADA -->
 <section id="offer" class="offer">
@@ -246,7 +254,7 @@
                     <div class="phone-notch"></div>
                     <div class="video-wrapper">
                        <video controls autoplay muted loop playsinline>
-                          <source src="media/video legendado (1).webm" type="video/mp4">
+                          <source src="media/video legendado (1).mp4" type="video/mp4">
                           Seu navegador não suporta o elemento de vídeo.
                        </video>
                     </div>
@@ -301,6 +309,12 @@
                 <i class="fas fa-shield-alt"></i>
                 <p><strong>30-Day Money-Back Guarantee</strong><br>If your cat doesn't love it, we'll refund you. No questions asked.</p>
             </div>
+
+            <div class="shipping-info">
+                <p>✓ Fast & Tracked US Shipping</p>
+                 <span>(Usually arrives in 5-7 business days)</span>
+            </div>
+
             <div class="trust-seals">
     <img src="https://www.honestcleaningandservices.com/wp-content/uploads/2023/09/BBB-seal-horizontal-us_1024x1024.png.webp"  alt="1">
      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShhUj4FyKpysy1x3vkYDz7c16wDAzYCGGX_g&s"  alt="2">
@@ -341,7 +355,16 @@
                     <p>Absolutely. The ball is made from durable, non-toxic, and pet-safe ABS plastic, designed to withstand biting, scratching, and endless pouncing.</p>
                 </details>
             </div>
+        <div class="faq-item">
+                <details>
+                    <summary>
+                         <span>How long does shipping take?</span>
+                         <i class="fas fa-chevron-down"></i>
+                    </summary>
+                     <p>We process all orders within 1-2 business days. Once shipped, your Paw & Joy ball will typically arrive within 5-7 business days. You will receive a tracking number via email as soon as your order is on its way! </p>
+                </details>
         </div>
+</div>
     </section>
 
     <!-- FOOTER -->
@@ -375,4 +398,3 @@
 
 </body>
 </html>
-

@@ -209,6 +209,10 @@ body {
     }
 }
 
+.anuncio-topo span {
+font-weight: bold;
+}
+
  .anuncio-topo {
             background-color: var(--primary-color);
             color: #ffffff; /* Cor do texto (branco) */
@@ -1093,4 +1097,3 @@ body {
     background-color: var(--primary-color); /* Usa a cor principal do seu site */
 }
 }
-

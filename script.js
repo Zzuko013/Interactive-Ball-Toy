@@ -1,6 +1,7 @@
 // Espera pelo evento 'DOMContentLoaded', que dispara quando todo o HTML
 // da página foi completamente carregado e analisado pelo navegador.
 document.addEventListener('DOMContentLoaded', () => {
+
     // --- CÓDIGO DO MENU MOBILE ---
     // (Este código também está seguro aqui dentro)
     const navToggle = document.querySelector('.nav-toggle');
@@ -12,6 +13,44 @@ document.addEventListener('DOMContentLoaded', () => {
             mainHeader.classList.toggle('nav-open');
         });
     }
+
+     // --- INÍCIO DO SCRIPT DO CRONÔMETRO ---
+
+        // 1. Define a duração da contagem regressiva (8 horas a partir de agora)
+        const duracaoEmHoras = 8;
+        const agora = new Date().getTime();
+        const dataFinal = agora + (duracaoEmHoras * 60 * 60 * 1000);
+
+        // 2. Atualiza o cronômetro a cada segundo
+        const intervalo = setInterval(function() {
+
+            // Pega a data e hora de agora
+            const hoje = new Date().getTime();
+            
+            // Calcula a distância entre a data final e agora
+            const distancia = dataFinal - hoje;
+            
+            // 3. Calcula horas, minutos e segundos
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+            
+            // Formata os números para sempre terem dois dígitos (ex: 09, 08, 07)
+            const horasFormatado = String(horas).padStart(2, '0');
+            const minutosFormatado = String(minutos).padStart(2, '0');
+            const segundosFormatado = String(segundos).padStart(2, '0');
+
+            // 4. Mostra o resultado no elemento com id="cronometro"
+            document.getElementById("cronometro").innerHTML = horasFormatado + ":" + minutosFormatado + ":" + segundosFormatado;
+            
+            // 5. Se a contagem terminar, mostra uma mensagem e para o cronômetro
+            if (distancia < 0) {
+                clearInterval(intervalo);
+                document.getElementById("anuncio-banner").innerHTML = "Offer ends!";
+            }
+        }, 1000); // 1000 milissegundos = 1 segundo
+
+        // --- FIM DO SCRIPT DO CRONÔMETRO ---
 // --- CÓDIGO DO CRONÔMETRO DE ESCASSEZ (VERSÃO APELATIVA) ---
 function startCountdown() {
     const countdownElement = document.getElementById('timer');
@@ -141,5 +180,3 @@ setTimeout(() => {
     setInterval(showSalesNotification, Math.random() * (20000 - 8000) + 8000);
 }, 7000);
 }); // Fim do addEventListener
-
-

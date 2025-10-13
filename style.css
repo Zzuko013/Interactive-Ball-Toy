@@ -213,7 +213,7 @@ body {
             top: 25px;          /* Alinhado ao topo */
             left: 0;         /* Alinhado à esquerda */
             width: 100%;     /* Ocupa 100% da largura */
-            z-index: 1000;   /* Garante que fique acima de outros elementos */
+            z-index: 800;   /* Garante que fique acima de outros elementos */
             box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra sutil */
         }
 
@@ -1087,6 +1087,7 @@ body {
     background-color: var(--primary-color); /* Usa a cor principal do seu site */
 }
 }
+
 
 
 

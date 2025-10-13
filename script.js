@@ -49,8 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById("anuncio-banner").innerHTML = "Offer ends!";
             }
         }, 1000); // 1000 milissegundos = 1 segundo
-
-        // --- FIM DO SCRIPT DO CRONÔMETRO ---
+    
 // --- CÓDIGO DO CRONÔMETRO DE ESCASSEZ (VERSÃO APELATIVA) ---
 function startCountdown() {
     const countdownElement = document.getElementById('timer');

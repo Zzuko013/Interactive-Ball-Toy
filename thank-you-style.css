@@ -44,10 +44,6 @@ body {
 }
 
 .happy-video {
-    max-width: 200px;
-    margin: 0 auto 40px auto;
-}
-.happy-video video{
     width: 100%; /* Define a largura do vídeo para 100% do container pai */
     height: auto; /* Mantém a proporção do vídeo */
     max-width: 500px; /* Define uma largura máxima para o vídeo */

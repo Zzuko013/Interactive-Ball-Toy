@@ -208,6 +208,7 @@ body {
             text-align: center; /* Alinha o texto ao centro */
             padding: 12px 10px; /* Espaçamento interno (vertical e horizontal) */
             font-size: 16px; /* Tamanho da fonte */
+            font-weight: 700;
             position: fixed; /* Posição fixa */
             top: 25px;          /* Alinhado ao topo */
             left: 0;         /* Alinhado à esquerda */
@@ -1086,6 +1087,7 @@ body {
     background-color: var(--primary-color); /* Usa a cor principal do seu site */
 }
 }
+
 
 
 

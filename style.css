@@ -243,7 +243,7 @@ font-weight: bold;
 }
 
 .pre-title {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 700;
     color: var(--primary-color);
     text-transform: uppercase;
@@ -425,22 +425,23 @@ font-weight: bold;
     color: var(--text-dark);
 }
 
+.offer { /* 1. O fundo sutil para criar o bloco de destaque */
+    background-color: var(--background-light); 
+    
+    /* 2. Mais espaço vertical (padding) para a seção respirar */
+    padding: 80px 0; 
+}
+
 .offer-container {
-    display: grid;
-    grid-template-columns: 1fr; /* Uma coluna no mobile por padrão */
+    display: block;
     gap: 40px;
     align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px; 
 }
 
-/* Em telas maiores, o layout muda para duas colunas */
-@media (min-width: 768px) {
-    .offer-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: flex-start; /* Alinha pelo topo, fica mais elegante */
-    }
-}
-
+/* Em telas maiores, o layout muda para duas colunas *
 /* 2. O Contêiner do Slider */
 
 /* 3. O Slide Individual (Dentro do Slider) */
@@ -488,12 +489,17 @@ font-weight: bold;
     margin-left: 5px;
 }
 
+.section-title.left-aligned span{ 
+    color:var(--primary-color)
+}
+
 .offer-benefits {
     list-style: none;
     padding: 0;
     margin: 25px 0;
-    display: flex;
+    display: block;
     flex-direction: column;
+    text-align: center;
     gap: 10px;
 }
 
@@ -629,7 +635,6 @@ font-weight: bold;
     opacity: 0.6;
 }
 /* --- AJUSTES PARA A SEÇÃO DE OFERTA NO MOBILE --- */
-@media (max-width: 767px) {
 
     .offer-content {
         text-align: center; /* Centraliza todo o conteúdo de texto */
@@ -671,7 +676,6 @@ font-weight: bold;
         max-width: 350px; /* Mas limita para não ficar estranho em telas um pouco maiores */
         margin: 0 auto; /* Centraliza o botão */
     }
-}
 /* --- FAQ SECTION --- */
 .faq {
     padding: var(--spacing-section) 0;
@@ -1106,5 +1110,3 @@ font-weight: bold;
     background-color: var(--primary-color); /* Usa a cor principal do seu site */
 }
 }
-
-

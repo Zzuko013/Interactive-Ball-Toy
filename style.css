@@ -242,6 +242,15 @@ font-weight: bold;
     border-bottom: 1px solid var(--border-color); 
 }
 
+.pre-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
 .hero-title span {
     color: var(--primary-color);
 }
@@ -1097,3 +1106,4 @@ font-weight: bold;
     background-color: var(--primary-color); /* Usa a cor principal do seu site */
 }
 }
+

@@ -78,7 +78,7 @@ body {
 .cta-support-text{
     font-size:1rem;
     font-weight:200;
-    text-align:left;
+    text-align:center;
     margin-bottom:70;
      padding: 20px 20px;
 }
@@ -973,9 +973,8 @@ font-weight: bold;
 
  .main-header .container {
         display: flex;
-        justify-content: center;
-    }
-
+        justify-content: space-between; /* <<-- ESTA É A MUDANÇA PRINCIPAL */
+ }
     .problem-grid, .steps-grid {
         grid-template-columns: 1fr;
         gap: 50px;

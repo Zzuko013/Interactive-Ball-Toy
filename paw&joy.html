@@ -14,24 +14,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
-    
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "tpck1xathp");
-</script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17632335659"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'AW-17632335659');
-    </script>
-    
 </head>
 <body>
 
@@ -50,7 +32,8 @@
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#offer">Special Offer</a></li>
                     <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#counter" class="nav-cta-button">Buy Now</a></li>
+        <!-- ADICIONE ISSO -->
+        <li><a href="#counter" class="nav-cta-button">Buy Now</a></li>
                 </ul>
             </nav>
             
@@ -60,7 +43,7 @@
             </button>
         </div>
     </header>
-            <!--==BANNER DESCONTO==-->
+
      <div id="anuncio-banner" class="anuncio-topo">
          <span>40% discount for:</span>
          <span id="cronometro"></span>
@@ -72,7 +55,7 @@
 
         <!-- BLOCK 1: INTRO TEXT (Title, Subtitle, Rating) -->
         <div class="hero-intro">
-            <p class="pre-title">THE ULTIMATE SOLUTION FOR A BORED CAT</p> 
+            <p class="pre-title">THE ULTIMATE SOLUTION FOR A BORED PET</p> 
             <h1 class="hero-title">The most <span>exciting hunt</span> your pet will ever have.</h1>
             <p class="hero-subtitle">End feline boredom. Keep your cat active, healthy, and happy with the intelligent ball that plays back.</p>
             <div class="hero-rating">
@@ -93,7 +76,7 @@
                 <div class="phone-notch"></div>
                 <div class="video-wrapper">
                    <video controls autoplay muted loop playsinline>
-                      <source src="media/video legendado (1).webm" type="video/mp4">
+                      <source src="media/video legendado (1).mp4" type="video/mp4">
                       Your browser does not support the video element.
                    </video>
                 </div>
@@ -159,7 +142,70 @@
 
     </div>
 </section>
-   
+
+   <!-- OFFER SECTION ATUALIZADA -->
+<section id="offer" class="offer">
+    <div class="container offer-container">
+        <!-- COLUNA DO CONTEÚDO DA OFERTA -->
+        <div class="offer-content">
+            <div id="counter"class="stock-counter">
+  <i class="fas fa-exclamation-triangle"></i>
+  <span>Attention: Due to high demand, only <b> 43 units remain</b> in stock!</span>
+</div>
+            <h2 class="section-title left-aligned">Get Yours <span>Today</span></h2>
+            <p>Don't let your cat spend another day bored. Invest in their happiness and health with our limited-time offer.</p>
+            
+            <!-- Avaliações com estrelas -->
+            <div class="star-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>4.8/5 (Based on 1,200+ reviews)</span>
+            </div>
+
+            <div id="buynow"class="price-box">
+                <span class="price-new">$21,95</span>
+                <span class="price-old">$32,90</span>
+            </div>
+            <!-- Coloque este bloco dentro do .offer-content, logo acima do botão de CTA -->
+
+<div class="countdown-container">
+    <h4 class="countdown-title">🔥Limited time offer:</h4>
+    <div id="timer" class="countdown-timer">
+        <!-- As caixas do tempo serão geradas pelo JavaScript aqui -->
+    </div>
+</div>
+            
+
+            <!-- Pontos-Chave da Oferta -->
+            <ul class="offer-benefits">
+                <li><i class="fas fa-check"></i> <strong>Smart Motion:</strong> Keeps your cat engaged.</li>
+                <li><i class="fas fa-check"></i> <strong>USB-C Rechargeable:</strong> Hours of fun.</li>
+                <li><i class="fas fa-check"></i> <strong>Pet-Safe Materials:</strong> Durable and non-toxic.</li>
+            </ul>
+
+            <a href="https://buy.stripe.com/28EaEX5PIdYabUG9isao800" class="cta-button">Claim My Discount Now</a>
+            
+            <div class="guarantee-box">
+                <i class="fas fa-shield-alt"></i>
+                <p><strong>30-Day Money-Back Guarantee</strong><br>If your cat doesn't love it, we'll refund you. No questions asked.</p>
+            </div>
+
+            <div class="shipping-info">
+                <p>✓ Fast & Tracked US Shipping</p>
+                 <span>(Usually arrives in 5-7 business days)</span>
+            </div>
+
+            <div class="trust-seals">
+    <img src="https://www.honestcleaningandservices.com/wp-content/uploads/2023/09/BBB-seal-horizontal-us_1024x1024.png.webp"  alt="1">
+     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShhUj4FyKpysy1x3vkYDz7c16wDAzYCGGX_g&s"  alt="2">
+     <img src="https://www.pikpng.com/pngl/b/533-5332436_mcafee-secure-logo-png-mcafee-security-logo-clipart.png"  alt="3">
+        </div>
+    </div>
+</section>
+
     <!-- HOW IT WORKS SECTION (ID adicionado aqui) -->
     <section id="how-it-works" class="how-it-works">
         <!-- O conteúdo da seção continua aqui... -->
@@ -257,87 +303,6 @@
             <div class="swiper-pagination"></div>
         </div>
 
-    </div>
-</section>
-
-   <!-- OFFER SECTION ATUALIZADA -->
-<section id="offer" class="offer">
-    <div class="container offer-container">
-        
-        <!-- COLUNA DA IMAGEM COM SLIDER -->
-<div class="offer-image-wrapper">
-    
-     <div class="hero-media">
-                <div class="phone-mockup">
-                    <div class="phone-notch"></div>
-                    <div class="video-wrapper">
-                       <video controls autoplay muted loop playsinline>
-                          <source src="media/video legendado (1).webm" type="video/mp4">
-                          Seu navegador não suporta o elemento de vídeo.
-                       </video>
-                    </div>
-                </div>
-            </div>
-    <!-- FIM DA ESTRUTURA DO SLIDER -->
-</div>
-
-        <!-- COLUNA DO CONTEÚDO DA OFERTA -->
-        <div class="offer-content">
-            <div id="counter" class="stock-counter">
-  <i class="fas fa-exclamation-triangle"></i>
-  <span>Attention: Due to high demand, only <b> 43 units remain</b> in stock!</span>
-</div>
-            <h2 class="section-title left-aligned">Get Yours Today</h2>
-            <p>Don't let your cat spend another day bored. Invest in their happiness and health with our limited-time offer.</p>
-            
-            <!-- Avaliações com estrelas -->
-            <div class="star-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-                <span>4.8/5 (Based on 1,200+ reviews)</span>
-            </div>
-
-            <div id="counter" class="price-box">
-                <span class="price-new">$21.95</span>
-                <span class="price-old">$30.90</span>
-            </div>
-            <!-- Coloque este bloco dentro do .offer-content, logo acima do botão de CTA -->
-
-<div class="countdown-container">
-    <h4 class="countdown-title">🔥Limited time offer:</h4>
-    <div id="timer" class="countdown-timer">
-        <!-- As caixas do tempo serão geradas pelo JavaScript aqui -->
-    </div>
-</div>
-            
-
-            <!-- Pontos-Chave da Oferta -->
-            <ul class="offer-benefits">
-                <li><i class="fas fa-check"></i> <strong>Smart Motion:</strong> Keeps your cat engaged.</li>
-                <li><i class="fas fa-check"></i> <strong>USB-C Rechargeable:</strong> Hours of fun.</li>
-                <li><i class="fas fa-check"></i> <strong>Pet-Safe Materials:</strong> Durable and non-toxic.</li>
-            </ul>
-
-          <a href="https://buy.stripe.com/fZu6oH91U5rE3oadyIao801" class="cta-button" target="_blank" rel="noopener noreferrer">Claim My Discount Now</a>
-            
-            <div class="guarantee-box">
-                <i class="fas fa-shield-alt"></i>
-                <p><strong>30-Day Money-Back Guarantee</strong><br>If your cat doesn't love it, we'll refund you. No questions asked.</p>
-            </div>
-
-            <div class="shipping-info">
-                <p>✓ Fast & Tracked US Shipping</p>
-                 <span>(Usually arrives in 5-7 business days)</span>
-            </div>
-
-            <div class="trust-seals">
-    <img src="https://www.honestcleaningandservices.com/wp-content/uploads/2023/09/BBB-seal-horizontal-us_1024x1024.png.webp"  alt="1">
-     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShhUj4FyKpysy1x3vkYDz7c16wDAzYCGGX_g&s"  alt="2">
-     <img src="https://www.pikpng.com/pngl/b/533-5332436_mcafee-secure-logo-png-mcafee-security-logo-clipart.png"  alt="3">
-        </div>
     </div>
 </section>
     

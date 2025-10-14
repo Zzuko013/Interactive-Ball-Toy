@@ -243,7 +243,7 @@ font-weight: bold;
 }
 
 .pre-title {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: var(--primary-color);
     text-transform: uppercase;
@@ -1106,4 +1106,5 @@ font-weight: bold;
     background-color: var(--primary-color); /* Usa a cor principal do seu site */
 }
 }
+
 

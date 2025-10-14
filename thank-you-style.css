@@ -50,6 +50,9 @@ body {
     display: block;
     box-shadow: none; 
     border-radius: 28px;
+
+    .happy-video video{
+    width: 20%; /* Define a largura do vídeo para 100% do container pai */
 }
 
 .next-steps {

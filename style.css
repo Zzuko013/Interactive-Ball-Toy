@@ -1,6 +1,6 @@
 /* --- VARIABLES & GLOBAL STYLES --- */
 :root {
-    --primary-color: #0046d3; /* A sophisticated teal/green */
+    --primary-color: #cb6ce6; /* A sophisticated teal/green */
     --primary-hover: #00877E;
     --text-dark: #2d3748; /* Softer than pure black */
     --text-light: #718096;
@@ -69,15 +69,6 @@ body {
     margin: 0;
 }
 
-.pre-title {
-    color: var(--primary-color); 
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-}
-
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -139,7 +130,7 @@ body {
 }
 
 .logo img {
-    max-height: 40px; /* Ajuste a altura da sua logo */
+    max-height: 80px; /* Ajuste a altura da sua logo */
 }
 
 .main-nav ul {
@@ -249,6 +240,15 @@ font-weight: bold;
     background-color: var(--background-light);
     padding: var(--spacing-section) 0;
     border-bottom: 1px solid var(--border-color); 
+}
+
+.pre-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
 }
 
 .hero-title span {
@@ -644,6 +644,11 @@ font-weight: bold;
     .offer-content .section-title.left-aligned {
         text-align: center;
     }
+
+    .offer-content .section-title span{
+        color: var(--primary-color)
+    }
+
 
     /* Centraliza os itens dentro de caixas flex (preço, estrelas e garantia) */
     .price-box,
@@ -1043,6 +1048,7 @@ font-weight: bold;
     .feature-row.reverse .feature-image {
         order: initial; /* Resets the order on mobile */
     }
+}
 /* --- ESTILOS MELHORADOS PARA OS TESTIMONIALS --- */
 
 .testimonial-card {
@@ -1108,5 +1114,3 @@ font-weight: bold;
 .testimonials-slider .swiper-pagination-bullet-active {
     background-color: var(--primary-color); /* Usa a cor principal do seu site */
 }
-}
-
